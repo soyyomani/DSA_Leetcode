@@ -1,8 +1,10 @@
+// link :"https://leetcode.com/problems/path-sum-iii/solutions/5466692/prefix_sum-in-treesdfs-approach-9792/"
 #include <iostream>
 #include <unordered_map>
 using namespace std;
 
-struct TreeNode {
+struct TreeNode 
+{
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -11,14 +13,16 @@ struct TreeNode {
 
 class Solution {
 public:
-    int pathSum(TreeNode* root, int target) {
+    int pathSum(TreeNode* root, int target) 
+    {
         unordered_map<long long, int> prefix_sum;
         prefix_sum[0] = 1;
         return dfs(root, target, 0, prefix_sum);
     }
 
 private:
-    int dfs(TreeNode* node, long long target, long long curr_sum, unordered_map<long long, int>& prefix_sum) {
+    int dfs(TreeNode* node, long long target, long long curr_sum, unordered_map<long long, int>& prefix_sum) 
+    {
         if (!node) {
             return 0;
         }
@@ -38,7 +42,7 @@ private:
 };
 
 int main() {
-    // Create the tree directly in the main function
+    // create as per your tree looks....
     TreeNode* root = new TreeNode(10);
     root->left = new TreeNode(5);
     root->right = new TreeNode(-3);
